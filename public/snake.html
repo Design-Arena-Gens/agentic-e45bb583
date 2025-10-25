@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - GameHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎮 GameHub</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="profile.html" id="profileLink" style="display: none;">Profile</a>
+                    <button id="authBtn" class="btn btn-primary">Login</button>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="game-container">
+            <h2>Snake Game</h2>
+            <p class="game-instructions">
+                Use arrow keys to guide the snake. Eat food to grow longer and increase your score!
+            </p>
+
+            <div class="game-controls">
+                <label>
+                    Speed:
+                    <select id="speed">
+                        <option value="150">Slow</option>
+                        <option value="100" selected>Medium</option>
+                        <option value="50">Fast</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="checkbox" id="soundToggle" checked> Sound
+                </label>
+            </div>
+
+            <div class="game-status">
+                <div id="gameScore">Score: 0</div>
+                <div id="highScore">High Score: 0</div>
+            </div>
+
+            <canvas id="snakeCanvas" class="snake-canvas" width="400" height="400"></canvas>
+
+            <div class="game-actions">
+                <button id="startGame" class="btn btn-play">Start Game</button>
+                <button id="pauseGame" class="btn btn-primary" disabled>Pause</button>
+            </div>
+
+            <div class="leaderboard-section">
+                <h3>🏆 Leaderboard</h3>
+                <div id="leaderboard" class="loading">Loading leaderboard...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="games/snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - GameHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎮 GameHub</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="profile.html" id="profileLink" style="display: none;">Profile</a>
+                    <button id="authBtn" class="btn btn-primary">Login</button>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="game-container">
+            <h2>Tic-Tac-Toe</h2>
+            <p class="game-instructions">
+                Take turns placing X and O on a 3x3 grid. Get three in a row to win!
+            </p>
+
+            <div class="game-controls">
+                <label>
+                    <input type="radio" name="mode" value="ai" checked> vs AI
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="local"> Local Multiplayer
+                </label>
+                <label>
+                    Difficulty:
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="checkbox" id="soundToggle" checked> Sound
+                </label>
+            </div>
+
+            <div class="game-status">
+                <div id="currentPlayer">Current Player: X</div>
+                <div id="gameScore">Score: 0</div>
+            </div>
+
+            <div id="tictactoeBoard" class="tictactoe-board"></div>
+
+            <div class="game-actions">
+                <button id="startGame" class="btn btn-play">Start Game</button>
+                <button id="resetGame" class="btn btn-primary">Reset</button>
+            </div>
+
+            <div class="leaderboard-section">
+                <h3>🏆 Leaderboard</h3>
+                <div id="leaderboard" class="loading">Loading leaderboard...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="games/tictactoe.js"></script>
+</body>
+</html>

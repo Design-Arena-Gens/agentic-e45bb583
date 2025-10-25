@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Play Browser Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎮 GameHub</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="profile.html" id="profileLink" style="display: none;">Profile</a>
+                    <button id="authBtn" class="btn btn-primary">Login</button>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to GameHub</h2>
+            <p>Play awesome browser games and compete with players worldwide!</p>
+        </section>
+
+        <section class="recent-winners">
+            <h2>🏆 Recent Winners</h2>
+            <div class="winners-carousel">
+                <div class="winners-list" id="recentWinners">
+                    <div class="loading">Loading recent winners...</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-grid">
+            <h2>Available Games</h2>
+            <div class="games-container">
+                <div class="game-card">
+                    <div class="game-thumbnail tictactoe-thumb">
+                        <div class="game-preview">
+                            <div class="ttt-grid">
+                                <div class="ttt-cell">X</div>
+                                <div class="ttt-cell">O</div>
+                                <div class="ttt-cell">X</div>
+                                <div class="ttt-cell">O</div>
+                                <div class="ttt-cell">X</div>
+                                <div class="ttt-cell">O</div>
+                                <div class="ttt-cell"></div>
+                                <div class="ttt-cell"></div>
+                                <div class="ttt-cell"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Tic-Tac-Toe</h3>
+                        <p>Classic strategy game. Play against AI or a friend locally!</p>
+                        <a href="tictactoe.html" class="btn btn-play">Play Now</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail snake-thumb">
+                        <div class="game-preview">
+                            <div class="snake-preview">
+                                <div class="snake-segment"></div>
+                                <div class="snake-food"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Snake Game</h3>
+                        <p>Guide the snake to eat food and grow longer. Don't hit the walls!</p>
+                        <a href="snake.html" class="btn btn-play">Play Now</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail quiz-thumb">
+                        <div class="game-preview">
+                            <div class="quiz-preview">
+                                <div class="quiz-icon">?</div>
+                                <div class="quiz-options">
+                                    <div class="quiz-option">A</div>
+                                    <div class="quiz-option">B</div>
+                                    <div class="quiz-option">C</div>
+                                    <div class="quiz-option">D</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Quiz Game</h3>
+                        <p>Test your knowledge with multiple-choice questions!</p>
+                        <a href="quiz.html" class="btn btn-play">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Login</h2>
+            <form id="authForm">
+                <div class="form-group" id="usernameGroup" style="display: none;">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" minlength="3" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+                <div id="errorMsg" class="error-msg"></div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <p class="toggle-auth">
+                    <span id="toggleAuthText">Don't have an account?</span>
+                    <a href="#" id="toggleAuth">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
